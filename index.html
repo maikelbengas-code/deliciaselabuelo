@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- VERIFICACIÓN GOOGLE SEARCH CONSOLE -->
+    <meta name="google-site-verification" content="ARcqEylwUeRjW943fs92G5pn_ikp3YBc7mrejqwjqxM" />
+
     <!-- SEO LOCAL OPTIMIZADO PARA BÚSQUEDAS EN GOOGLE -->
     <title>Comedor Delicias El Abuelo | El Mejor Comedor en Vallemí, Concepción</title>
     <meta name="description" content="Comedor Delicias El Abuelo en Vallemí. Ofrecemos platos del día, minutas, bocaditos para eventos y la mejor atención gastronómica en Vallemí, Concepción, Paraguay.">
@@ -472,7 +475,7 @@
         window.deleteDocFromFirebase = async (docId) => {
             if (!currentUser) return;
             if (confirm("¿Estás seguro de que deseas eliminar este plato?")) {
-                await deleteDoc(doc(db, "platos", docId));
+                await deleteDoc(doc(doc(db, "platos", docId)));
             }
         };
 
