@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO LOCAL OPTIMIZADO PARA BÚSQUEDAS EN GOOGLE -->
+    <title>Comedor Delicias El Abuelo | El Mejor Comedor en Vallemí, Concepción</title>
+    <meta name="description" content="Comedor Delicias El Abuelo en Vallemí. Ofrecemos platos del día, minutas, bocaditos para eventos y la mejor atención gastronómica en Vallemí, Concepción, Paraguay.">
+    <meta name="keywords" content="comedor vallemí, comedor delicias, delicias el abuelo, restaurante vallemí, comida en vallemí, turismo vallemí, bocaditos vallemí">
+    <meta name="author" content="Comedor Delicias El Abuelo">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Metadatos para WhatsApp y Redes Sociales) -->
+    <meta property="og:title" content="Comedor Delicias El Abuelo | Sabores Exclusivos en Vallemí">
+    <meta property="og:description" content="Platos del día, minutas y servicios de catering para eventos en Vallemí. Visítanos o haz tu pedido.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="restaurant">
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Great Vibes + Cinzel + Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .font-cursive { font-family: 'Great Vibes', cursive; }
+        .font-serif-title { font-family: 'Cinzel', serif; }
+        .glass-nav {
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-[#FDFBF7] text-[#332822] antialiased selection:bg-[#C65D21] selection:text-white">
+
+    <!-- NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-[#EFE7DA] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center space-x-2 sm:space-x-3 group">
+                <img src="logo.png" alt="Logo Delicias El Abuelo" class="h-10 w-10 sm:h-12 sm:w-12 object-cover rounded-full shadow-md group-hover:scale-105 transition-transform duration-300">
+                <span class="font-cursive text-2xl sm:text-4xl text-[#C65D21] leading-none pt-1">Delicias El Abuelo</span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 font-medium text-xs tracking-wider uppercase text-gray-700">
+                <a href="#inicio" class="hover:text-[#C65D21] transition duration-200">Inicio</a>
+                <a href="#platos" class="hover:text-[#C65D21] transition duration-200">Platos</a>
+                <a href="#menu-dia" class="hover:text-[#C65D21] transition duration-200">Menú del Día</a>
+                <a href="#eventos" class="hover:text-[#C65D21] transition duration-200">Bocaditos & Eventos</a>
+                <a href="#turismo" class="hover:text-[#C65D21] transition duration-200">Turismo Vallemí</a>
+                <a href="#ubicacion" class="hover:text-[#C65D21] transition duration-200">Ubicación</a>
+                <button onclick="openAdmin()" class="text-[#C65D21] font-bold hover:underline cursor-pointer">🔒 Admin</button>
+            </nav>
+
+            <div class="hidden sm:block">
+                <a href="https://maps.app.goo.gl/eHzMLC4XSC3f4HMt7" target="_blank" class="bg-[#C65D21] text-white px-5 py-2.5 rounded-full font-semibold text-xs tracking-wider uppercase shadow-md hover:bg-[#A94E1A] transition duration-300 inline-flex items-center space-x-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Cómo Llegar</span>
+                </a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-[#332822] focus:outline-none p-2" aria-label="Abrir Menú">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FDFBF7] border-b border-[#EFE7DA] px-6 py-4 space-y-3 font-medium text-sm text-gray-700 uppercase tracking-wider">
+            <a href="#inicio" class="block hover:text-[#C65D21]">Inicio</a>
+            <a href="#platos" class="block hover:text-[#C65D21]">Platos</a>
+            <a href="#menu-dia" class="block hover:text-[#C65D21]">Menú del Día</a>
+            <a href="#eventos" class="block hover:text-[#C65D21]">Bocaditos & Eventos</a>
+            <a href="#turismo" class="block hover:text-[#C65D21]">Turismo Vallemí</a>
+            <a href="#ubicacion" class="block hover:text-[#C65D21]">Ubicación</a>
+            <button onclick="openAdmin()" class="block w-full text-left text-[#C65D21] font-bold py-1">🔒 Admin (Panel)</button>
+            <a href="https://maps.app.goo.gl/eHzMLC4XSC3f4HMt7" target="_blank" class="inline-flex items-center justify-center w-full bg-[#C65D21] text-white py-3 rounded-full text-xs font-semibold mt-2">
+                📍 Cómo Llegar
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bg-[#1A1412] text-white py-16 sm:py-36 px-4 sm:px-6 text-center overflow-hidden flex items-center justify-center min-h-[80vh]">
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 scale-105 transition-transform duration-1000" style="background-image: url('banner.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1A1412] via-[#1A1412]/60 to-transparent"></div>
+
+        <div class="relative max-w-4xl mx-auto flex flex-col items-center justify-center z-10 w-full">
+            <img src="logo.png" alt="Logo Delicias El Abuelo" class="w-64 sm:w-96 h-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.85)] transition-transform duration-500 hover:scale-105 mb-4 sm:mb-6">
+            
+            <span class="font-cursive text-4xl sm:text-7xl text-[#E88045] mb-2 leading-tight">Delicias El Abuelo</span>
+            <h1 class="font-serif-title text-xl sm:text-4xl font-bold tracking-tight text-[#F7F2E7] mb-3 sm:mb-4">Sabores Exclusivos y Comedor en Vallemí</h1>
+            <p class="text-xs sm:text-lg text-gray-300 max-w-2xl font-light mb-6 sm:mb-8 px-2">Cada jornada preparamos propuestas culinarias frescas y únicas. Te esperamos en nuestro comedor para deleitar tu paladar o preparar los pedidos especiales de tus eventos.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4">
+                <a href="https://www.instagram.com/deliciaselabuelopy/" target="_blank" class="bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wide shadow-lg hover:opacity-95 transition duration-300 flex items-center justify-center gap-2.5 w-full sm:w-auto">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span>Síguenos en Instagram</span>
+                </a>
+                <a href="#eventos" class="border border-white/40 backdrop-blur-md text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wide uppercase hover:bg-white/10 transition duration-300 w-full sm:w-auto text-center">Bocaditos & Eventos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRUSEL DE PLATOS -->
+    <section id="platos" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-b border-[#EFE7DA]">
+        <div class="text-center mb-8 sm:mb-12">
+            <span class="text-[#C65D21] uppercase tracking-widest text-xs font-bold">Galería Culinaria</span>
+            <h2 class="font-serif-title text-2xl sm:text-4xl font-bold mt-1.5 text-[#332822]">Algunos de Nuestros Platos</h2>
+            <div class="w-12 sm:w-16 h-1 bg-[#C65D21] mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl border border-[#EFE7DA] bg-white group min-h-[280px] sm:min-h-[450px]">
+            <div id="carousel-slides" class="flex transition-transform duration-500 ease-out">
+                <!-- Se cargan dinámicamente desde Firebase -->
+            </div>
+
+            <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition cursor-pointer">❮</button>
+            <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition cursor-pointer">❯</button>
+
+            <div id="carousel-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MENÚ DEL DÍA -->
+    <section id="menu-dia" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+        <div class="text-center mb-8 sm:mb-12">
+            <span class="text-[#C65D21] uppercase tracking-widest text-xs font-bold">Variación Diaria</span>
+            <h2 class="font-serif-title text-2xl sm:text-4xl font-bold mt-1 sm:mt-2 text-[#332822]">Nuestras Delicias Diarias</h2>
+            <div class="w-12 sm:w-16 h-1 bg-[#C65D21] mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <div class="bg-white rounded-2xl sm:rounded-3xl border border-[#EFE7DA] shadow-lg p-6 sm:p-12 max-w-3xl mx-auto text-center relative overflow-hidden">
+            <span class="inline-block bg-[#F7F2E7] text-[#C65D21] font-bold text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1 sm:px-4 sm:py-1.5 rounded-full mb-4 sm:mb-6 border border-[#EFE7DA]">
+                Consulta lo preparado para hoy
+            </span>
+
+            <h3 class="font-serif-title text-xl sm:text-3xl font-bold text-[#332822] mb-3 sm:mb-4">
+                Platos Especiales y Minutas en Vallemí
+            </h3>
+
+            <p class="text-gray-600 text-xs sm:text-base leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto">
+                Envíanos un mensaje por WhatsApp para conocer las delicias disponibles del día en nuestro comedor y hacer tu pedido directo.
+            </p>
+
+            <a href="https://wa.me/595981246496?text=Hola!%20Quisiera%20saber%20cuál%20es%20el%20menú%20de%20delicias%20disponible%20para%20hoy" target="_blank" class="inline-flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide shadow-lg hover:bg-[#1eb956] transition duration-300 w-full sm:w-auto">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+                <span>Consultar Menú por WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN EVENTOS -->
+    <section id="eventos" class="bg-[#F7F2E7] py-14 sm:py-20 px-4 sm:px-6 border-y border-[#EFE7DA]">
+        <div class="max-w-5xl mx-auto bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-[#EFE7DA] shadow-md flex flex-col lg:flex-row items-center gap-8 sm:gap-10">
+            <div class="lg:w-1/2 text-left w-full">
+                <span class="text-[#C65D21] font-bold text-[10px] sm:text-xs uppercase tracking-widest block mb-1.5">Servicios Especiales</span>
+                <h2 class="font-serif-title text-2xl sm:text-3xl font-bold text-[#332822] mb-3 sm:mb-4">Bocaditos y Eventos</h2>
+                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-5">
+                    Elaboramos bandejas de bocaditos salados, dulces y preparaciones gastronómicas exclusivas para festejos en Vallemí.
+                </p>
+                <div class="bg-[#FDFBF7] border border-[#EFE7DA] p-3.5 rounded-xl sm:rounded-2xl mb-5">
+                    <p class="text-[11px] sm:text-xs text-gray-700 font-medium flex items-start gap-2">
+                        <span>📌</span>
+                        <span>Las reservas y presupuestos para eventos se realizan exclusivamente <strong>bajo consulta previa</strong>.</span>
+                    </p>
+                </div>
+                <a href="https://wa.me/595981246496?text=Hola!%20Quisiera%20consultar%20presupuesto%20para%20reserva%20de%20bocaditos%20o%20evento" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#332822] text-white px-5 py-3 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-[#C65D21] transition duration-300 w-full sm:w-auto text-center">
+                    <span>Consultar Reserva de Eventos</span>
+                </a>
+            </div>
+            <div class="lg:w-1/2 bg-[#1A1412] p-6 sm:p-8 rounded-2xl text-white text-center w-full">
+                <span class="font-cursive text-3xl sm:text-4xl text-[#E88045] block mb-1.5">Delicias a Pedido</span>
+                <p class="text-[11px] sm:text-xs text-gray-300 leading-relaxed mb-4">Asegura la mejor calidad en tus festejos encargando con anticipación.</p>
+                <div class="border-t border-white/20 pt-4 text-[11px] sm:text-xs text-gray-400 space-y-2">
+                    <p>✔️ Bocaditos Dulces y Salados</p>
+                    <p>✔️ Opciones Personalizadas</p>
+                    <p>✔️ Atención para Eventos Privados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TURISMO -->
+    <section id="turismo" class="py-14 sm:py-28 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10 sm:mb-16">
+                <span class="text-[#C65D21] uppercase tracking-widest text-xs font-bold">Turismo en la Ciudad</span>
+                <h2 class="font-serif-title text-2xl sm:text-4xl font-bold mt-1.5 text-[#332822]">Descubre Vallemí</h2>
+                <p class="text-xs sm:text-base text-gray-600 max-w-2xl mx-auto mt-3">
+                    Disfruta de las maravillas naturales e históricas de nuestra región y pasa por nuestro comedor a degustar lo mejor de nuestra cocina antes o después de tu recorrido.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-[#EFE7DA] flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <img src="cavernas1.png" alt="Cavernas de Vallemí" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h3 class="font-serif-title font-bold text-lg text-[#332822] mb-2">Cavernas de Vallemí</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Formaciones de piedra caliza únicas en el país, ideales para los amantes del espeleoturismo y la aventura subterránea.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-[#EFE7DA] flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <img src="kambahopo.png" alt="Peñón Kamba Hopo" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h3 class="font-serif-title font-bold text-lg text-[#332822] mb-2">Peñón Kamba Hopo</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Un imponente acantilado rocoso a orillas del río Paraguay, perfecto para paseos en lancha y postales inolvidables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-[#EFE7DA] flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <img src="mirador.png" alt="Mirador de Vallemí" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h3 class="font-serif-title font-bold text-lg text-[#332822] mb-2">Mirador de Vallemí</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Punto panorámico estratégico para contemplar el paisaje norteño, el atardecer y la confluencia de las aguas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-[#EFE7DA] flex flex-col justify-between hover:shadow-xl transition duration-300">
+                    <div>
+                        <img src="rutadelguaa.png" alt="Ruta del Gua'a" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h3 class="font-serif-title font-bold text-lg text-[#332822] mb-2">Ruta del Gua'a</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed">Recorrido ecológico para el avistamiento de guacamayos en su hábitat natural entre serranías y vegetación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-[#EFE7DA]">
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-[#EFE7DA] overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+            <div class="p-6 sm:p-12 flex flex-col justify-center">
+                <span class="text-[#C65D21] font-bold text-xs tracking-wider uppercase mb-1.5">Información del Comedor</span>
+                <h3 class="font-serif-title text-xl sm:text-3xl font-bold text-[#332822] mb-4">Te Esperamos en Comedor Delicias El Abuelo</h3>
+                <p class="text-xs sm:text-sm text-gray-700 mb-6">📍 Vallemí, Concepción, Paraguay.<br>🕒 Lunes a Sábado: 10:00 AM – 15:00 PM<br>📞 +595 981 246 496</p>
+                <a href="https://maps.app.goo.gl/eHzMLC4XSC3f4HMt7" target="_blank" class="bg-[#C65D21] text-white px-6 py-3.5 rounded-full font-semibold text-xs uppercase text-center hover:bg-[#A94E1A]">Ver en Google Maps</a>
+            </div>
+            <div class="bg-[#1A1412] p-6 flex items-center justify-center text-center text-white">
+                <div>
+                    <img src="logo.png" alt="Logo" class="w-24 h-24 mx-auto mb-2 object-contain">
+                    <span class="font-cursive text-3xl text-[#E88045] block">Delicias El Abuelo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1A1412] text-white py-8 text-center text-xs text-gray-400">
+        &copy; 2026 Comedor Delicias El Abuelo - Vallemí, Concepción.
+    </footer>
+
+    <!-- MODAL 1: LOGIN ADMIN -->
+    <div id="login-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl relative text-center">
+            <button onclick="closeModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 font-bold">✕</button>
+            <h3 class="font-serif-title text-xl font-bold text-[#332822] mb-1">Acceso Administrador</h3>
+            <p class="text-xs text-gray-500 mb-6">Ingresa tus credenciales para gestionar fotos</p>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Correo Electrónico</label>
+                    <input id="login-user" type="email" required class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#C65D21]">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Contraseña</label>
+                    <input id="login-pass" type="password" required class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#C65D21]">
+                </div>
+                <p id="login-error" class="text-xs text-red-500 hidden text-center">Usuario o contraseña incorrectos</p>
+                <button type="submit" class="w-full bg-[#C65D21] text-white py-3 rounded-xl font-bold text-xs uppercase hover:bg-[#A94E1A] transition">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: PANEL ADMIN (AGREGAR PLATOS) -->
+    <div id="admin-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-serif-title text-xl font-bold text-[#332822]">Panel de Administración</h3>
+                <button onclick="logoutAdmin()" class="text-xs text-red-600 font-bold hover:underline">Cerrar Sesión</button>
+            </div>
+            <p class="text-xs text-gray-600 mb-6">Agrega un nuevo plato al carrusel o elimínalos directamente desde la imagen.</p>
+
+            <form onsubmit="addNewSlide(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Título del Plato</label>
+                    <input id="slide-title" type="text" placeholder="Ej: Milanesa con Guarnición" required class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#C65D21]">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Descripción Corta</label>
+                    <input id="slide-desc" type="text" placeholder="Ej: Disponible todos los mediodías" required class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#C65D21]">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Seleccionar Foto</label>
+                    <input id="slide-file" type="file" accept="image/*" required class="w-full text-xs text-gray-500 border border-gray-300 rounded-xl p-2">
+                </div>
+
+                <div class="flex gap-2">
+                    <button type="submit" id="btn-submit" class="w-full bg-[#C65D21] text-white py-3 rounded-xl font-bold text-xs uppercase hover:bg-[#A94E1A] transition">Agregar Foto</button>
+                    <button type="button" onclick="closeModal('admin-modal')" class="bg-gray-200 text-gray-700 px-4 rounded-xl font-bold text-xs">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS CONEXIÓN CON FIREBASE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Tus credenciales vinculadas de deliciaselabuelo-5a7f5
+        const firebaseConfig = {
+            apiKey: "AIzaSyBrr9e8JqFWKxX3BnTRphPitdRKUHc65K4",
+            authDomain: "deliciaselabuelo-5a7f5.firebaseapp.com",
+            projectId: "deliciaselabuelo-5a7f5",
+            storageBucket: "deliciaselabuelo-5a7f5.firebasestorage.app",
+            messagingSenderId: "896830595267",
+            appId: "1:896830595267:web:5d4d4aa0bd909aee9a4276",
+            measurementId: "G-YMVZNLKK5R"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let currentUser = null;
+        let currentSlide = 0;
+        const slidesContainer = document.getElementById('carousel-slides');
+
+        // Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // Estado de Sesión
+        onAuthStateChanged(auth, (user) => {
+            currentUser = user;
+            renderAdminButtons();
+        });
+
+        function renderAdminButtons() {
+            document.querySelectorAll('.btn-delete-slide').forEach(btn => {
+                if (currentUser) {
+                    btn.classList.remove('hidden');
+                } else {
+                    btn.classList.add('hidden');
+                }
+            });
+        }
+
+        // Modales
+        window.openAdmin = () => {
+            mobileMenu.classList.add('hidden');
+            if (currentUser) {
+                document.getElementById('admin-modal').classList.remove('hidden');
+            } else {
+                document.getElementById('login-modal').classList.remove('hidden');
+            }
+        };
+
+        window.closeModal = (id) => document.getElementById(id).classList.add('hidden');
+
+        // Iniciar Sesión Admin
+        window.handleLogin = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-user').value;
+            const pass = document.getElementById('login-pass').value;
+            const errEl = document.getElementById('login-error');
+
+            try {
+                await signInWithEmailAndPassword(auth, email, pass);
+                errEl.classList.add('hidden');
+                closeModal('login-modal');
+                document.getElementById('admin-modal').classList.remove('hidden');
+                e.target.reset();
+            } catch (err) {
+                errEl.classList.remove('hidden');
+            }
+        };
+
+        window.logoutAdmin = () => {
+            signOut(auth);
+            closeModal('admin-modal');
+        };
+
+        // Cargar Platos en tiempo real desde Firestore
+        onSnapshot(collection(db, "platos"), (snapshot) => {
+            slidesContainer.innerHTML = '';
+
+            if (snapshot.empty) {
+                slidesContainer.innerHTML = `
+                    <div class="min-w-full h-[280px] sm:h-[450px] flex items-center justify-center bg-gray-100 text-gray-500 text-sm">
+                        No hay platos registrados todavía. Inicia sesión como administrador para agregar fotos.
+                    </div>
+                `;
+            } else {
+                snapshot.docs.forEach((docSnap) => {
+                    const data = docSnap.data();
+                    const slide = document.createElement('div');
+                    slide.className = 'min-w-full relative h-[280px] sm:h-[450px]';
+                    slide.innerHTML = `
+                        <img src="${data.url}" class="w-full h-full object-cover" alt="${data.title}">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white flex justify-between items-end">
+                            <div>
+                                <h3 class="font-serif-title text-lg sm:text-2xl font-bold">${data.title}</h3>
+                                <p class="text-xs sm:text-sm text-gray-200">${data.desc}</p>
+                            </div>
+                            <button onclick="deleteDocFromFirebase('${docSnap.id}')" class="btn-delete-slide ${currentUser ? '' : 'hidden'} bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-lg font-bold shadow-md transition">🗑️ Eliminar</button>
+                        </div>
+                    `;
+                    slidesContainer.appendChild(slide);
+                });
+            }
+
+            rebuildDots();
+            updateCarousel();
+        });
+
+        // Agregar plato a Firestore
+        window.addNewSlide = (e) => {
+            e.preventDefault();
+            if (!currentUser) return;
+
+            const title = document.getElementById('slide-title').value;
+            const desc = document.getElementById('slide-desc').value;
+            const fileInput = document.getElementById('slide-file');
+            const btnSubmit = document.getElementById('btn-submit');
+
+            if (fileInput.files && fileInput.files[0]) {
+                btnSubmit.disabled = true;
+                btnSubmit.innerText = "Guardando...";
+
+                const reader = new FileReader();
+                reader.onload = async function(event) {
+                    try {
+                        await addDoc(collection(db, "platos"), {
+                            title: title,
+                            desc: desc,
+                            url: event.target.result,
+                            createdAt: new Date()
+                        });
+                        closeModal('admin-modal');
+                        e.target.reset();
+                    } catch (error) {
+                        alert("Error al guardar en Firestore: " + error.message);
+                    } finally {
+                        btnSubmit.disabled = false;
+                        btnSubmit.innerText = "Agregar Foto";
+                    }
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        };
+
+        // Eliminar plato de Firestore
+        window.deleteDocFromFirebase = async (docId) => {
+            if (!currentUser) return;
+            if (confirm("¿Estás seguro de que deseas eliminar este plato?")) {
+                await deleteDoc(doc(db, "platos", docId));
+            }
+        };
+
+        // Lógica del Carrusel
+        window.updateCarousel = () => {
+            const total = slidesContainer.children.length;
+            if (total === 0) return;
+            if (currentSlide >= total) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = total - 1;
+            
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            const dots = document.querySelectorAll('#carousel-dots button');
+            dots.forEach((dot, idx) => {
+                dot.className = idx === currentSlide 
+                    ? 'w-3 h-3 rounded-full bg-white transition' 
+                    : 'w-3 h-3 rounded-full bg-white/50 transition';
+            });
+        };
+
+        window.nextSlide = () => { currentSlide++; updateCarousel(); };
+        window.prevSlide = () => { currentSlide--; updateCarousel(); };
+        window.goToSlide = (index) => { currentSlide = index; updateCarousel(); };
+
+        function rebuildDots() {
+            const dotsContainer = document.getElementById('carousel-dots');
+            dotsContainer.innerHTML = '';
+            const total = slidesContainer.children.length;
+            for (let i = 0; i < total; i++) {
+                const newDot = document.createElement('button');
+                newDot.onclick = () => goToSlide(i);
+                newDot.className = i === currentSlide ? 'w-3 h-3 rounded-full bg-white transition' : 'w-3 h-3 rounded-full bg-white/50 transition';
+                dotsContainer.appendChild(newDot);
+            }
+        }
+    </script>
+</body>
+</html>
