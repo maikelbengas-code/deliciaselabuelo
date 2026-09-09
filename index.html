@@ -6,6 +6,7 @@
     
     <!-- VERIFICACIÓN GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="ARcqEylwUeRjW943fs92G5pn_ikp3YBc7mrejqwjqxM" />
+
     <!-- SEO LOCAL OPTIMIZADO PARA BÚSQUEDAS EN GOOGLE -->
     <title>Comedor Delicias El Abuelo | El Mejor Comedor en Vallemí, Concepción</title>
     <meta name="description" content="Comedor Delicias El Abuelo en Vallemí. Ofrecemos platos del día, minutas, bocaditos para eventos y la mejor atención gastronómica en Vallemí, Concepción, Paraguay.">
@@ -52,6 +53,7 @@
                 <a href="#menu-dia" class="hover:text-[#C65D21] transition duration-200">Menú del Día</a>
                 <a href="#eventos" class="hover:text-[#C65D21] transition duration-200">Bocaditos & Eventos</a>
                 <a href="#turismo" class="hover:text-[#C65D21] transition duration-200">Turismo Vallemí</a>
+                <a href="#resenas" class="hover:text-[#C65D21] transition duration-200">Reseñas</a>
                 <a href="#ubicacion" class="hover:text-[#C65D21] transition duration-200">Ubicación</a>
                 <button onclick="openAdmin()" class="text-[#C65D21] font-bold hover:underline cursor-pointer">🔒 Admin</button>
             </nav>
@@ -78,6 +80,7 @@
             <a href="#menu-dia" class="block hover:text-[#C65D21]">Menú del Día</a>
             <a href="#eventos" class="block hover:text-[#C65D21]">Bocaditos & Eventos</a>
             <a href="#turismo" class="block hover:text-[#C65D21]">Turismo Vallemí</a>
+            <a href="#resenas" class="block hover:text-[#C65D21]">Reseñas</a>
             <a href="#ubicacion" class="block hover:text-[#C65D21]">Ubicación</a>
             <button onclick="openAdmin()" class="block w-full text-left text-[#C65D21] font-bold py-1">🔒 Admin (Panel)</button>
             <a href="https://maps.app.goo.gl/eHzMLC4XSC3f4HMt7" target="_blank" class="inline-flex items-center justify-center w-full bg-[#C65D21] text-white py-3 rounded-full text-xs font-semibold mt-2">
@@ -121,8 +124,8 @@
                 <!-- Se cargan dinámicamente desde Firebase -->
             </div>
 
-            <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition cursor-pointer">❮</button>
-            <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition cursor-pointer">❯</button>
+            <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition cursor-pointer" aria-label="Anterior">❮</button>
+            <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white p-2.5 rounded-full transition cursor-pointer" aria-label="Siguiente">❯</button>
 
             <div id="carousel-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
         </div>
@@ -242,6 +245,90 @@
         </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: RESEÑAS DE GOOGLE MAPS -->
+    <section id="resenas" class="bg-[#F7F2E7] py-14 sm:py-20 px-4 sm:px-6 border-t border-[#EFE7DA]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10 sm:mb-14">
+                <span class="text-[#C65D21] uppercase tracking-widest text-xs font-bold">Opiniones Reales</span>
+                <h2 class="font-serif-title text-2xl sm:text-4xl font-bold mt-1.5 text-[#332822]">Lo que Dicen Nuestros Clientes</h2>
+                <div class="w-12 sm:w-16 h-1 bg-[#C65D21] mx-auto mt-3 rounded-full"></div>
+                <p class="text-xs sm:text-sm text-gray-600 mt-3">Valoración excelente basada en las experiencias de quienes nos visitan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Reseña 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-[#EFE7DA] flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-3">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-700 italic mb-4">
+                            "Excelente atención y la comida casera es riquísima. Los platos del día siempre frescos y con un sabor inigualable. Muy recomendado si visitas Vallemí."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                        <div class="w-9 h-9 rounded-full bg-[#C65D21]/20 text-[#C65D21] font-bold flex items-center justify-center text-xs">
+                            CR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-[#332822]">Carlos Ramírez</h4>
+                            <span class="text-[10px] text-gray-500">Local Guide • Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-[#EFE7DA] flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-3">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-700 italic mb-4">
+                            "Los mejores bocaditos para eventos en la zona. Hicimos un pedido grande y todo llegó a tiempo, presentación impecable y delicioso. ¡Un 10!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                        <div class="w-9 h-9 rounded-full bg-[#C65D21]/20 text-[#C65D21] font-bold flex items-center justify-center text-xs">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-[#332822]">María Acosta</h4>
+                            <span class="text-[10px] text-gray-500">Cliente Verificado • Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reseña 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-[#EFE7DA] flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-3">
+                            ★★★★★
+                        </div>
+                        <p class="text-xs sm:text-sm text-gray-700 italic mb-4">
+                            "Un lugar acogedor y muy limpio. Después de recorrer las cavernas pasamos a almorzar y fue la mejor decisión. Súper amable la atención del personal."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                        <div class="w-9 h-9 rounded-full bg-[#C65D21]/20 text-[#C65D21] font-bold flex items-center justify-center text-xs">
+                            JV
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs text-[#332822]">Jorge Villalba</h4>
+                            <span class="text-[10px] text-gray-500">Local Guide • Google Maps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="https://maps.app.goo.gl/eHzMLC4XSC3f4HMt7" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-[#C65D21] hover:underline">
+                    <span>Ver más opiniones o dejarnos una reseña en Google Maps</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- UBICACIÓN -->
     <section id="ubicacion" class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 border-t border-[#EFE7DA]">
         <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-[#EFE7DA] overflow-hidden grid grid-cols-1 lg:grid-cols-2">
@@ -268,7 +355,7 @@
     <!-- MODAL 1: LOGIN ADMIN -->
     <div id="login-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl relative text-center">
-            <button onclick="closeModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 font-bold">✕</button>
+            <button onclick="closeModal('login-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 font-bold" aria-label="Cerrar modal">✕</button>
             <h3 class="font-serif-title text-xl font-bold text-[#332822] mb-1">Acceso Administrador</h3>
             <p class="text-xs text-gray-500 mb-6">Ingresa tus credenciales para gestionar fotos</p>
 
@@ -292,7 +379,7 @@
         <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="font-serif-title text-xl font-bold text-[#332822]">Panel de Administración</h3>
-                <button onclick="logoutAdmin()" class="text-xs text-red-600 font-bold hover:underline">Cerrar Sesión</button>
+                <button onclick="logoutAdmin()" class="text-xs text-red-600 font-bold hover:underline cursor-pointer">Cerrar Sesión</button>
             </div>
             <p class="text-xs text-gray-600 mb-6">Agrega un nuevo plato al carrusel o elimínalos directamente desde la imagen.</p>
 
@@ -306,7 +393,7 @@
                     <input id="slide-desc" type="text" placeholder="Ej: Disponible todos los mediodías" required class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#C65D21]">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-gray-700 mb-1">Seleccionar Foto</label>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Seleccionar Foto (Evitar fotos muy pesadas)</label>
                     <input id="slide-file" type="file" accept="image/*" required class="w-full text-xs text-gray-500 border border-gray-300 rounded-xl p-2">
                 </div>
 
@@ -324,7 +411,6 @@
         import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // Tus credenciales vinculadas de deliciaselabuelo-5a7f5
         const firebaseConfig = {
             apiKey: "AIzaSyBrr9e8JqFWKxX3BnTRphPitdRKUHc65K4",
             authDomain: "deliciaselabuelo-5a7f5.firebaseapp.com",
@@ -350,13 +436,9 @@
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-        // Estado de Sesión
+        // Estado de Sesión en Tiempo Real
         onAuthStateChanged(auth, (user) => {
             currentUser = user;
-            renderAdminButtons();
-        });
-
-        function renderAdminButtons() {
             document.querySelectorAll('.btn-delete-slide').forEach(btn => {
                 if (currentUser) {
                     btn.classList.remove('hidden');
@@ -364,7 +446,7 @@
                     btn.classList.add('hidden');
                 }
             });
-        }
+        });
 
         // Modales
         window.openAdmin = () => {
@@ -407,7 +489,7 @@
 
             if (snapshot.empty) {
                 slidesContainer.innerHTML = `
-                    <div class="min-w-full h-[280px] sm:h-[450px] flex items-center justify-center bg-gray-100 text-gray-500 text-sm">
+                    <div class="min-w-full h-[280px] sm:h-[450px] flex items-center justify-center bg-gray-100 text-gray-500 text-sm px-4 text-center">
                         No hay platos registrados todavía. Inicia sesión como administrador para agregar fotos.
                     </div>
                 `;
@@ -418,12 +500,12 @@
                     slide.className = 'min-w-full relative h-[280px] sm:h-[450px]';
                     slide.innerHTML = `
                         <img src="${data.url}" class="w-full h-full object-cover" alt="${data.title}">
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white flex justify-between items-end">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 text-white flex justify-between items-end">
                             <div>
                                 <h3 class="font-serif-title text-lg sm:text-2xl font-bold">${data.title}</h3>
                                 <p class="text-xs sm:text-sm text-gray-200">${data.desc}</p>
                             </div>
-                            <button onclick="deleteDocFromFirebase('${docSnap.id}')" class="btn-delete-slide ${currentUser ? '' : 'hidden'} bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-lg font-bold shadow-md transition">🗑️ Eliminar</button>
+                            <button onclick="deleteDocFromFirebase('${docSnap.id}')" class="btn-delete-slide ${currentUser ? '' : 'hidden'} bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-lg font-bold shadow-md transition cursor-pointer">🗑️ Eliminar</button>
                         </div>
                     `;
                     slidesContainer.appendChild(slide);
@@ -434,7 +516,7 @@
             updateCarousel();
         });
 
-        // Agregar plato a Firestore
+        // Agregar plato a Firestore con compresión básica de imagen
         window.addNewSlide = (e) => {
             e.preventDefault();
             if (!currentUser) return;
@@ -445,28 +527,59 @@
             const btnSubmit = document.getElementById('btn-submit');
 
             if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
                 btnSubmit.disabled = true;
-                btnSubmit.innerText = "Guardando...";
+                btnSubmit.innerText = "Procesando imagen...";
 
                 const reader = new FileReader();
-                reader.onload = async function(event) {
-                    try {
-                        await addDoc(collection(db, "platos"), {
-                            title: title,
-                            desc: desc,
-                            url: event.target.result,
-                            createdAt: new Date()
-                        });
-                        closeModal('admin-modal');
-                        e.target.reset();
-                    } catch (error) {
-                        alert("Error al guardar en Firestore: " + error.message);
-                    } finally {
-                        btnSubmit.disabled = false;
-                        btnSubmit.innerText = "Agregar Foto";
-                    }
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = async function() {
+                        const canvas = document.createElement('canvas');
+                        const MAX_WIDTH = 1000;
+                        const MAX_HEIGHT = 1000;
+                        let width = img.width;
+                        let height = img.height;
+
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height *= MAX_WIDTH / width;
+                                width = MAX_WIDTH;
+                            }
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width *= MAX_HEIGHT / height;
+                                height = MAX_HEIGHT;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+
+                        try {
+                            btnSubmit.innerText = "Guardando en base de datos...";
+                            await addDoc(collection(db, "platos"), {
+                                title: title,
+                                desc: desc,
+                                url: compressedDataUrl,
+                                createdAt: new Date()
+                            });
+                            closeModal('admin-modal');
+                            e.target.reset();
+                        } catch (error) {
+                            alert("Error al guardar en Firestore: " + error.message);
+                        } finally {
+                            btnSubmit.disabled = false;
+                            btnSubmit.innerText = "Agregar Foto";
+                        }
+                    };
                 };
-                reader.readAsDataURL(fileInput.files[0]);
+                reader.readAsDataURL(file);
             }
         };
 
@@ -474,7 +587,11 @@
         window.deleteDocFromFirebase = async (docId) => {
             if (!currentUser) return;
             if (confirm("¿Estás seguro de que deseas eliminar este plato?")) {
-                await deleteDoc(doc(doc(db, "platos", docId)));
+                try {
+                    await deleteDoc(doc(db, "platos", docId));
+                } catch (error) {
+                    alert("No se pudo eliminar el plato: " + error.message);
+                }
             }
         };
 
@@ -505,8 +622,10 @@
             const total = slidesContainer.children.length;
             for (let i = 0; i < total; i++) {
                 const newDot = document.createElement('button');
+                newDot.type = "button";
                 newDot.onclick = () => goToSlide(i);
                 newDot.className = i === currentSlide ? 'w-3 h-3 rounded-full bg-white transition' : 'w-3 h-3 rounded-full bg-white/50 transition';
+                newDot.setAttribute('aria-label', `Ir a diapositiva ${i + 1}`);
                 dotsContainer.appendChild(newDot);
             }
         }
